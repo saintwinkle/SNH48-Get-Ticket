@@ -1,2 +1,16 @@
-snh48-get-ticket
-================
+###SNH48官方商城(伪)抢票脚本
+
+####功能
+
+一键抢票。
+
+####方法
+
+1. Chrome用户安装 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-cn) 扩展；Firefox用户安装 [Greasemonkey](https://addons.mozilla.org/zh-cn/firefox/addon/greasemonkey) 插件；
+2. 安装`snh48-get-ticket.js`这个脚本；
+3. 打开 [商城首页](http://shop.snh48.com) ，点击票务链接，即可自动将1张票(可自行在脚本中修改数量)加入购物车。
+
+####其他
+
+- 其他上架商品也可以抢；
+- F5已烂。
