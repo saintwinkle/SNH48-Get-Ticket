@@ -7,8 +7,8 @@
 ####方法
 
 1. Chrome用户安装 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-cn) 扩展；Firefox用户安装 [Greasemonkey](https://addons.mozilla.org/zh-cn/firefox/addon/greasemonkey) 插件；
-2. 安装`snh48-get-ticket.js`这个脚本；
-3. 打开 [商城首页](http://shop.snh48.com) ，点击票务链接，即可自动将1张票(可自行在脚本中修改数量)加入购物车。
+2. 点击 [这 里](https://github.com/saintwinkle/snh48-get-ticket/raw/master/snh48-get-ticket.user.js) 进行安装；
+3. 打开 [商城首页](http://shop.snh48.com) ，点击票务链接，即可自动将1张票(默认，可手动在脚本中修改数量)加入购物车。
 
 ####其他
 
