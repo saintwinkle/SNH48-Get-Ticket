@@ -7,12 +7,11 @@
 // @run-at        document-end
 // ==/UserScript==
 
-/* 购买数量 */
-document.getElementById('number').value = 2;
-changePrice();
+/* 购买数量(可自行去掉注释修改数量) */
+// document.getElementById('number').value = 1;
+// changePrice();
 
-show(); /* 调出验证界面 */
-
+NewCode();
 var characters = [ /* 0-9 A-Z的库, 缺少0,1,I,O四个字符 */
     ['', //0
     '', //1
