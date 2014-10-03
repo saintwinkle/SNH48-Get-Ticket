@@ -8,7 +8,7 @@
 
 1. Chrome用户安装 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-cn) 扩展；Firefox用户安装 [Greasemonkey](https://addons.mozilla.org/zh-cn/firefox/addon/greasemonkey) 插件
 2. 点击 [这里](https://github.com/saintwinkle/SNH48-Get-Ticket/raw/master/SNH48-Get-Ticket.user.js) 安装脚本
-3. 打开 [商城首页](http://shop.snh48.com) ，点击票务链接即可（可以在脚本中自行修改购买数量，默认为2）
+3. 打开 [商城首页](http://shop.snh48.com) ，点击票务链接即可（可在脚本中自行修改购买数量）
 
 ####注意事项
 
