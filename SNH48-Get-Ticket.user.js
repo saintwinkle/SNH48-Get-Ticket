@@ -4,12 +4,14 @@
 // @version       0.1
 // @description   SNH48官方商城抢票脚本
 // @include       http://shop.snh48.com/goods-*
+// @include       http://admin.snh48.com/goods-*
+// @include       http://admin.snh48.com/goods.php?id=*
 // @run-at        document-end
 // ==/UserScript==
 
-/* 购买数量(可自行去掉注释修改数量) */
-// document.getElementById('number').value = 1;
-// changePrice();
+/* 购买数量(可自行修改数量) */
+document.getElementById('number').value = 1;
+changePrice();
 
 NewCode();
 var characters = [ /* 0-9 A-Z的库, 缺少0,1,I,O四个字符 */
