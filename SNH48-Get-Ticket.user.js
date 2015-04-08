@@ -68,11 +68,11 @@ image.onload = function() {
     var reslut_list = new Array();
     var is_donation = $("#is_donation");
     var is_real = 1;
-	var priceid = 0;
+    var priceid = 0;
     reslut_list.push(window.location.pathname.match(/\d+/)[0]);
     reslut_list.push(captcha);
     reslut_list.push(is_donation.val());
-	reslut_list.push(is_real);
-	reslut_list.push(priceid);
+    reslut_list.push(is_real);
+    reslut_list.push(priceid);
     addToCart(reslut_list);
 }
