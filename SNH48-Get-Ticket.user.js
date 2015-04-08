@@ -2,6 +2,7 @@
 // @name          SNH48 Get Ticket
 // @namespace     http://weibo.com/1997375853
 // @version       0.2.0
+// @author        Twinkle
 // @description   SNH48官方商城抢票脚本
 // @include       http://shop.snh48.com/goods-*
 // @include       http://admin.snh48.com/goods-*
