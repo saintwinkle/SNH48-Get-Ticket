@@ -5,6 +5,7 @@
 // @author        Twinkle
 // @description   SNH48官方商城抢票脚本
 // @include       http://shop.snh48.com/goods-*
+// @include       http://shop.snh48.com/goods.php?id=*
 // @include       http://admin.snh48.com/goods-*
 // @include       http://admin.snh48.com/goods.php?id=*
 // @run-at        document-end
