@@ -1,40 +1,90 @@
 // ==UserScript==
 // @name          SNH48 Get Ticket
 // @namespace     https://github.com/saintwinkle/SNH48-Get-Ticket
-// @version       0.3.0
+// @version       1.0.0
 // @author        Twinkle
 // @description   SNH48官方商城抢票脚本
-// @match         http://shop.snh48.com/goods-*
-// @match         http://shop.snh48.com/goods.php?id=*
-// @match         http://admin.snh48.com/goods-*
-// @match         http://admin.snh48.com/goods.php?id=*
+// @include       http://shop.48.cn/tickets/item/*
 // @run-at        document-end
 // ==/UserScript==
 
-// 设置购买数量, 默认为1, 上限为3
-var number = 1;
+$(document).ready(function () {
+  // 初始化参数
+  var ticket_number = 1; // 购票数量, 默认为 1 张.
+  var ticket_type = 3; // 购票类型, 默认为普座. 2: VIP 3: 普座 4: 站票
 
-var goods = {
-  quick: 1,
-  spec: [],
-  goods_id: goods_id,
-  captcha: '0',
-  is_donation: $('#is_donation').val(),
-  number: number,
-  donation_number: $('#donation_number').val(),
-  parent: 0
-}
+  // 添加购票按钮
+  $('#buy').after('<a href="javascript:;" id="super_buy">一键抢票</a>');
 
-var fn = function() {
-  $.post('/test.php', {
-    goods_id: goods_id,
-    goods: JSON.stringify(goods),
-    step: 'default'
-  }, function() {
-    location.href = '/checkout.php?step=checkout';
+  // 按钮点击事件
+  $('#super_buy').css({
+    'display': 'block',
+    'float': 'left',
+    'padding': '5px 10px',
+    'background': '#9999ff',
+    'border-radius': '5px',
+    'border': '1px solid #9999ff',
+    'color': '#fff'
+  }).click(function () {
+    $.ajax({
+      url: '/TOrder/add',
+      type: 'post',
+      dataType: 'json',
+      data: {
+        id: tickets_id,
+        num: ticket_number,
+        seattype: ticket_type,
+        r: Math.random()
+      },
+      success: function (result) {
+        if (result.HasError) {
+          layer.msg(result.Message);
+        } else {
+          if (result.Message === 'success') {
+            window.location.href = result.ReturnObject;
+          } else {
+            tickets();
+          }
+        }
+      },
+      error: function (e) {
+        layer.msg('下单异常, 请刷新重试');
+      }
+    });
   });
-};
 
-// 我也不知道为什么连续请求两次就可以了 >.>
-fn();
-setTimeout(fn, 100);
+  function tickets () {
+    $.ajax({
+      url: '/TOrder/tickCheck',
+      type: 'post',
+      dataType: 'json',
+      data: {
+        id: tickets_id,
+        r: Math.random()
+      },
+      success: function (result) {
+        if (result.HasError) {
+          layer.closeAll();
+          layer.msg(result.Message);
+        } else {
+          switch (result.ErrorCode) {
+            case 'wait':
+              tickets();
+              break;
+            case 'fail':
+              layer.closeAll();
+              layer.msg(result.Message);
+              break;
+            case 'success':
+              window.location.href = result.ReturnObject;
+              break;
+          }
+        }
+      },
+      error: function (e) {
+        layer.closeAll();
+        layer.msg('下单异常, 请刷新重试');
+      }
+    });
+  }
+});
