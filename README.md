@@ -1,17 +1,8 @@
 ## SNH48官方商城抢票脚本
 
-#### 脚本功能
-
-一键抢票，跳过30s等待时间
-
-#### 使用方法
-
-1. Chrome用户安装 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-cn) 扩展；Firefox用户安装 [Greasemonkey](https://addons.mozilla.org/zh-cn/firefox/addon/greasemonkey) 扩展
-2. 点击 [这里](https://github.com/saintwinkle/SNH48-Get-Ticket/raw/master/SNH48-Get-Ticket.user.js) 安装脚本
-3. 打开 [商城首页](http://shop.snh48.com) ，点击票务链接即可
-
 #### 更新日志
 
+[2016.04.22] **不再维护此脚本**  
 [2015.08.05] 官网去除验证码改用延时等待，已修复  
 [2015.04.08] 官网修改验证码，已适配  
 [2014.10.21] 增加匹配网段  
