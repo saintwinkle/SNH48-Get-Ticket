@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SNH48 Get Ticket
 // @namespace     https://github.com/saintwinkle/SNH48-Get-Ticket
-// @version       1.0.0
+// @version       1.0.1
 // @author        Twinkle
 // @description   SNH48官方商城抢票脚本
 // @include       http://shop.48.cn/tickets/item/*
@@ -10,8 +10,8 @@
 
 $(document).ready(function () {
   // 初始化参数
-  var ticket_number = 1; // 购票数量, 默认为 1 张.
-  var ticket_type = 3; // 购票类型, 默认为普座. 2: VIP 3: 普座 4: 站票
+  var ticketNumber = 1; // 购票数量, 默认为1张.
+  var ticketType = 3; // 购票类型, 默认为普座. 2: VIP 3: 普座 4: 站票
 
   // 添加购票按钮
   $('#buy').after('<a href="javascript:;" id="super_buy">一键抢票</a>');
@@ -32,8 +32,9 @@ $(document).ready(function () {
       dataType: 'json',
       data: {
         id: tickets_id,
-        num: ticket_number,
-        seattype: ticket_type,
+        num: ticketNumber,
+        seattype: ticketType,
+        brand_id: '1',
         r: Math.random()
       },
       success: function (result) {
